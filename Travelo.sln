@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelo.API", "Travelo.API\Travelo.API.csproj", "{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelo.Application", "Travelo.Application\Travelo.Application.csproj", "{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelo.Domain", "Travelo.Domain\Travelo.Domain.csproj", "{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelo.Infrastracture", "Travelo.Infrastracture\Travelo.Infrastracture.csproj", "{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AB15BF9-17D4-4CDC-BD04-D774CD6253B5}
+	EndGlobalSection
+EndGlobal
