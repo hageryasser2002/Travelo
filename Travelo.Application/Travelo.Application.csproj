@@ -10,4 +10,13 @@
     <ProjectReference Include="..\Travelo.Domain\Travelo.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Services\" />
+    <Folder Include="UseCases\" />
+  </ItemGroup>
+
 </Project>

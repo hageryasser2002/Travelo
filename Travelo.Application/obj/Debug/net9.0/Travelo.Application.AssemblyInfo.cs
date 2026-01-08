@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Travelo.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aba89fc2456be0d746a3cb94474ba961f6688273")]
 [assembly: System.Reflection.AssemblyProductAttribute("Travelo.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Travelo.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
