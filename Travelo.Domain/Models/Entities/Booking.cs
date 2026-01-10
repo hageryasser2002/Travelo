@@ -1,4 +1,4 @@
-﻿namespace Travelo.API.models
+﻿namespace Travelo.Domain.models.Entities
 {
     public class Booking
     {
