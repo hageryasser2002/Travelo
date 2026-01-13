@@ -36,10 +36,22 @@ namespace Travelo.Infrastracture.Repositories
             _emailSender = emailSender;
         }
 
-        
-        public async Task<GenericResponse<string>> RegisterAsync(RegisterDTO registerDTO)
+        public async Task<GenericResponse<string>> ChangePasswordAsync (ChangePasswordDTO changePasswordDTO, string userId)
         {
-            if (registerDTO.Email == null)
+            var user = await userManager.FindByIdAsync(userId);
+            if (user is null)
+            {
+                return GenericResponse<string>.FailureResponse("User not found");
+            }
+            var result = await userManager.ChangePasswordAsync(user, changePasswordDTO.CurrentPassword, changePasswordDTO.NewPassword);
+            return !result.Succeeded
+                ? GenericResponse<string>.FailureResponse(string.Join(", ", result.Errors.Select(e => e.Description)))
+                : GenericResponse<string>.SuccessResponse("Password changed successfully");
+        }
+
+        public async Task<GenericResponse<string>> RegisterAsync (RegisterDTO registerDTO)
+        {
+            if (registerDTO.Email==null)
             {
                 return GenericResponse<string>.FailureResponse("Invalid Email");
             }
@@ -47,11 +59,11 @@ namespace Travelo.Infrastracture.Repositories
 
             try
             {
-                user = new ApplicationUser
+                user=new ApplicationUser
                 {
-                    Email = registerDTO.Email,
-                    UserName = registerDTO.UserName,
-                    PhoneNumber = registerDTO.PhoneNumber
+                    Email=registerDTO.Email,
+                    UserName=registerDTO.UserName,
+                    PhoneNumber=registerDTO.PhoneNumber
                 };
                 var result = await userManager.CreateAsync(user, registerDTO.Password!);
 
@@ -69,14 +81,14 @@ namespace Travelo.Infrastracture.Repositories
             }
             catch (Exception ex)
             {
-                if (user != null)
+                if (user!=null)
                     await userManager.DeleteAsync(user);
 
-                var errorMessage = ex.InnerException != null
+                var errorMessage = ex.InnerException!=null
                       ? ex.InnerException.Message
                       : ex.Message;
 
-                    return GenericResponse<string>.FailureResponse("Error: " + errorMessage + " | StackTrace: " + ex.StackTrace);
+                return GenericResponse<string>.FailureResponse("Error: "+errorMessage+" | StackTrace: "+ex.StackTrace);
             }
 
             //await SendConfirmationEmail(user, registerDTO.ClientUri!);
