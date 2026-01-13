@@ -81,27 +81,6 @@ builder.Services.AddScoped<RegisterUseCase>();
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opt =>
 opt.TokenLifespan = TimeSpan.FromHours(2));
 
-builder.Services.AddAuthentication(options => 
-{
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-}
-    
-)
-.AddCookie(IdentityConstants.ApplicationScheme)
-.AddCookie(IdentityConstants.ExternalScheme)
-.AddGoogle(options =>
-{
-    options.ClientId = builder.Configuration["Google:ClientID"];
-    options.ClientSecret = builder.Configuration["Google:ClientSecret"];
-    options.SaveTokens = true;
-    options.Scope.Add("profile");
-    options.Scope.Add("email");
-    options.ClaimActions.MapJsonKey("picture", "picture");
-});
-
-builder.Services.AddScoped<IOAuthGoogleRepository, OAuthGoogleRepository>();
-builder.Services.AddScoped<IJwtTokenRepository, JwtTokenRepository>();
 builder.Services.AddScoped<GoogleLoginUseCase>();
 
 var app = builder.Build();

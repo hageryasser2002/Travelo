@@ -9,6 +9,6 @@ namespace Travelo.Domain.Models.Entities
 {
     public class ApplicationUser: IdentityUser
     {
-
+        public string? GoogleId { get; set; }
     }
 }

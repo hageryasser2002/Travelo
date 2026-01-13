@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Travelo.Application.Common.Responses;
@@ -12,5 +13,6 @@ namespace Travelo.Application.Interfaces
     {
         Task<GenericResponse<string>> RegisterAsync(RegisterDTO registerDTO);
         Task<GenericResponse<AuthResponseDTO>> LoginAsync(LoginDTO loginDTO);
+        Task<AuthDTO> GoogleLoginAsync(GoogleLoginDTO dto);
     }
 }

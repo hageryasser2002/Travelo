@@ -1,26 +1,29 @@
-﻿using System;
+﻿using Google.Apis.Auth;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Travelo.Application.DTOs.Auth;
 using Travelo.Application.Interfaces;
 
 namespace Travelo.Application.UseCases.Auth
 {
     public class GoogleLoginUseCase
     {
-        private readonly IOAuthGoogleRepository _oAuthGoogleRepository;
+        private readonly IAuthRepository _authRepository;
 
-        public GoogleLoginUseCase(IOAuthGoogleRepository externalAuthService)
+        public GoogleLoginUseCase(IAuthRepository authRepository)
         {
-            _oAuthGoogleRepository = externalAuthService;
+            _authRepository = authRepository;
         }
 
-        public async Task<string> ExecuteAsync(ClaimsPrincipal principal)
+        public async Task<AuthDTO> ExecuteAsync(GoogleLoginDTO dto)
         {
-            var token = await _oAuthGoogleRepository.GoogleLoginAsync(principal);
-            return token;
+            return await _authRepository.GoogleLoginAsync(dto);
         }
     }
 }
+

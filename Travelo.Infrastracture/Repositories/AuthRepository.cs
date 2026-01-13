@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Google.Apis.Auth;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -95,6 +96,70 @@ namespace Travelo.Infrastracture.Repositories
             };
 
             return GenericResponse<AuthResponseDTO>.SuccessResponse(authData, "Login Successful");
+        }
+        public async Task<AuthDTO> GoogleLoginAsync(GoogleLoginDTO googleLoginDTO)
+        {
+            GoogleJsonWebSignature.Payload payload;
+
+            try
+            {
+                payload = await GoogleJsonWebSignature.ValidateAsync(
+                    googleLoginDTO.IdToken,
+                    new GoogleJsonWebSignature.ValidationSettings
+                    {
+                        Audience = new[]
+                        {
+                            _configuration["Authentication:Google:ClientId"]
+                        }
+                    });
+            }
+            catch
+            {
+                return new AuthDTO
+                {
+                    Success = false,
+                    Message = "Invalid Google token"
+                };
+            }
+
+            var user = await userManager.FindByEmailAsync(payload.Email);
+
+            if (user == null)
+            {
+                user = new ApplicationUser
+                {
+                    Email = payload.Email,
+                    UserName = payload.Email,
+                    EmailConfirmed = true,
+                    GoogleId = payload.Subject
+                };
+
+                var createResult = await userManager.CreateAsync(user);
+
+                if (!createResult.Succeeded)
+                {
+                    return new AuthDTO
+                    {
+                        Success = false,
+                        Message = string.Join(", ", createResult.Errors.Select(e => e.Description))
+                    };
+                }
+            }
+            else if (string.IsNullOrEmpty(user.GoogleId))
+            {
+                user.GoogleId = payload.Subject;
+                await userManager.UpdateAsync(user);
+            }
+
+            var token = GenerateJwtToken(user);
+
+            return new AuthDTO
+            {
+                Success = true,
+                Message = "Google login successful",
+                Token = token,
+                Expiration = DateTime.UtcNow.AddDays(1)
+            };
         }
         private string GenerateJwtToken(ApplicationUser user)
         {
