@@ -15,11 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\NewFolder\**" />
+    <EmbeddedResource Remove="Interfaces\NewFolder\**" />
+    <None Remove="Interfaces\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Travelo.Domain\Travelo.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\NewFolder\" />
     <Folder Include="Mapping\" />
   </ItemGroup>
 
