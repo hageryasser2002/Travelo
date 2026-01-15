@@ -21,6 +21,7 @@ namespace Travelo.Infrastracture.Repositories
             _context = context;
             _userManager = userManager;
 
+            //Auth = new AuthRepository(_context, _userManager);
             Hotels = new HotelRepository(_context);
 
         }
