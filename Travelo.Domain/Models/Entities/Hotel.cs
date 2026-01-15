@@ -26,7 +26,10 @@ namespace Travelo.Domain.Models.Entities
         public double Rating { get; set; } 
         public int ReviewsCount { get; set; } 
         public string ImageUrl { get; set; } = string.Empty; 
-        public bool IsFeatured { get; set; } 
+        public bool IsFeatured { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public ICollection<Room> Rooms { get; set; } = new List<Room>();
+
 
     }
 }
