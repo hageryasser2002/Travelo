@@ -32,7 +32,7 @@ namespace Travelo.Application.UseCases.Review
                     HotelId = v.HotelId,
                     AvgOverallRate = reviews.Data.Average(r => r.OverallRating),
                     AvgValueRate = reviews.Data.Average(r => r.ValueRating) ?? 0,
-                    AvgLocationRate = reviews.Data.Average(r => r.LocationRating) ??? 0,
+                    AvgLocationRate = reviews.Data.Average(r => r.LocationRating) ?? 0,
                     AvgCleanlinessRate = reviews.Data.Average(r => r.CleanlinessRating) ?? 0,
                     AvgAmenityRate = reviews.Data.Average(r => r.AmenityRating) ?? 0,
                     AvgCommunicationRate = reviews.Data.Average(r => r.CommunicationRating) ?? 0,
