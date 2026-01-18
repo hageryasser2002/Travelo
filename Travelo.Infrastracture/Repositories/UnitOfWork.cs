@@ -17,6 +17,7 @@ namespace Travelo.Infrastracture.Repositories
 
         public UnitOfWork (ApplicationDbContext context, UserManager<ApplicationUser> userManager, IEmailSender emailSender, IConfiguration configuration, IFileService fileService)
         {
+<<<<<<< HEAD
             _context=context;
             _userManager=userManager;
             _emailSender=emailSender;
@@ -24,6 +25,14 @@ namespace Travelo.Infrastracture.Repositories
             Auth=new AuthRepository(_userManager, _context, _configuration, _emailSender);
             Hotels=new HotelRepository(_context);
             Cities=new CityRepository(_context);
+=======
+            _context = context;
+            _userManager = userManager;
+
+            //Auth = new AuthRepository(_context, _userManager);
+            Hotels = new HotelRepository(_context);
+
+>>>>>>> Add-Featured-Hotels
         }
 
         public IAuthRepository Auth { get; private set; }
