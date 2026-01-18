@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+=======
+>>>>>>> Add-Featured-Hotels
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,11 +16,15 @@ using Travelo.Application.Services.Auth;
 using Travelo.Application.Services.City;
 using Travelo.Application.Services.FileService;
 using Travelo.Application.UseCases.Auth;
+using Travelo.Application.UseCases.Hotels;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
 using Travelo.Infrastracture.Identity;
 using Travelo.Infrastracture.Repositories;
+<<<<<<< HEAD
 
+=======
+>>>>>>> Add-Featured-Hotels
 
 var builder = WebApplication.CreateBuilder(args);
 //Database Connection
@@ -84,6 +91,7 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddDataProtection();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+<<<<<<< HEAD
 builder.Services.AddScoped(
     typeof(IGenericRepository<>),
     typeof(GenericRepository<>)
@@ -92,6 +100,10 @@ builder.Services.AddScoped(
 builder.Services.AddScoped<RegisterUseCase>();
 builder.Services.AddScoped<Travelo.Application.UseCases.Hotels.GetFeaturedHotelsUseCase>();
 
+=======
+builder.Services.AddScoped<GetFeaturedHotelsUseCase>();
+builder.Services.AddScoped<GetHotelByIdUseCase>();
+>>>>>>> Add-Featured-Hotels
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opt =>
 opt.TokenLifespan=TimeSpan.FromHours(2));

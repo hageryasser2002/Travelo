@@ -22,8 +22,7 @@ namespace Travelo.Infrastracture.Contexts
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-
-
+        public DbSet<Room> Rooms { get; set; }
 
         override protected void OnModelCreating (ModelBuilder builder)
         {
@@ -36,6 +35,10 @@ namespace Travelo.Infrastracture.Contexts
             builder.Ignore<IdentityUserClaim<string>>();
             builder.Ignore<IdentityUserToken<string>>();
             builder.Ignore<IdentityUserClaim<string>>();
+<<<<<<< HEAD
+=======
+
+>>>>>>> Add-Featured-Hotels
         }
     }
 }
