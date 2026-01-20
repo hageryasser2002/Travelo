@@ -2,7 +2,7 @@
 
 namespace Travelo.Application.Services.FileService
 {
-    public class FileService : IFileService
+    public class FileServices : IFileServices
     {
         public Task<bool> DeleteFileAsync (string fileUrl, string folderName)
         {

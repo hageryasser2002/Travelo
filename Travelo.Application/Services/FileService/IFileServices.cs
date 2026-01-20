@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System.Threading.Tasks;
 
 namespace Travelo.Application.Services.FileService
 {
-    public interface IFileService
+    public interface IFileServices
     {
         Task<string?> UploadFileAsync (IFormFile file, string filePath);
         Task<bool> DeleteFileAsync (string fileUrl, string folderName);
