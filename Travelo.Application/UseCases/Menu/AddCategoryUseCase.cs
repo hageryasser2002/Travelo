@@ -9,9 +9,9 @@ namespace Travelo.Application.UseCases.Menu
     public class AddCategoryUseCase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IFileService _fileService;
+        private readonly IFileServices _fileService;
 
-        public AddCategoryUseCase(IUnitOfWork unitOfWork ,IFileService fileService)
+        public AddCategoryUseCase(IUnitOfWork unitOfWork ,IFileServices fileService)
         {
             _unitOfWork = unitOfWork;
             _fileService = fileService;

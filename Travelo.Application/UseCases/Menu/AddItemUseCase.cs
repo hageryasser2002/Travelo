@@ -14,11 +14,11 @@ namespace Travelo.Application.UseCases.Menu
     public class AddItemUseCase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IFileService _fileService;
+        private readonly IFileServices _fileService;
 
         public AddItemUseCase(
             IUnitOfWork unitOfWork,
-            IFileService fileService)
+            IFileServices fileService)
         {
             _unitOfWork = unitOfWork;
             _fileService = fileService;

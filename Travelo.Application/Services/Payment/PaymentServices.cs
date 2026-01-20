@@ -1,5 +1,4 @@
-﻿using Stripe;
-using Stripe.Checkout;
+﻿using Stripe.Checkout;
 using Travelo.Application.Common.Responses;
 using Travelo.Application.DTOs.Payment;
 using Travelo.Application.Interfaces;
@@ -13,7 +12,7 @@ namespace Travelo.Application.Services.Payment
         private readonly IHotelRepository _hotel;
         private readonly IRoomBookingRepository _roomBooking;
 
-        public PaymentServices (IPaymentRepository payment, IHotelRepository hotel , IRoomBookingRepository roomBooking)
+        public PaymentServices (IPaymentRepository payment, IHotelRepository hotel, IRoomBookingRepository roomBooking)
         {
             _payment=payment;
             _hotel=hotel;
@@ -97,6 +96,10 @@ namespace Travelo.Application.Services.Payment
             };
             await _roomBooking.Add(roobooking);
             _payment.Update(payment);
+            return GenericResponse<RoomBookingPaymentRes>.SuccessResponse(new RoomBookingPaymentRes
+            {
+                Message="Payment successful"
+            });
 
         }
     }
