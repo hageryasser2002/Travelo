@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using Travelo.Application.Common.Responses;
 using Travelo.Application.DTOs.Auth;
 using Travelo.Application.Interfaces;
-using Travelo.Application.Services.Auth;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
 
@@ -176,9 +175,9 @@ namespace Travelo.Infrastracture.Repositories
                 var emailBody = htmlTemplate.Replace("{{RESET_LINK}}", resetLink);
 
 
-                var message = new Message(new[] { user.Email! }, "Reset Password ", emailBody);
+                //var message = new Message(new[] { user.Email! }, "Reset Password ", emailBody);
 
-                await _emailSender.SendEmailAsync(message);
+                //await _emailSender.SendEmailAsync(message);
 
                 return GenericResponse<string>.SuccessResponse(
                     $"An email with a reset link has been sent."

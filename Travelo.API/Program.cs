@@ -9,7 +9,6 @@ using Scalar.AspNetCore;
 using System.Text;
 using Travelo.API.Middleware;
 using Travelo.Application.Interfaces;
-using Travelo.Application.Services.Auth;
 using Travelo.Application.UseCases.Auth;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
@@ -31,7 +30,7 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddOpenApi();
-builder.Services.AddScoped<Travelo.Application.Interfaces.IEmailSender, EmailSender>();
+//builder.Services.AddScoped<Travelo.Application.Interfaces.IEmailSender, EmailSender>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<LoginUseCase>();
 builder.Services.AddScoped<RegisterUseCase>();
@@ -114,8 +113,8 @@ builder.Services.AddScoped<IOAuthGoogleRepository, OAuthGoogleRepository>();
 builder.Services.AddScoped<IJwtTokenRepository, JwtTokenRepository>();
 builder.Services.AddScoped<GoogleLoginUseCase>();
 
-var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfigruration>();
-builder.Services.AddSingleton(emailConfig);
+//var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfigruration>();
+//builder.Services.AddSingleton(emailConfig);
 //builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<ForgotPasswordUseCase>();
 builder.Services.AddScoped<ResetPasswordUseCase>();

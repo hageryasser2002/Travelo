@@ -85,7 +85,7 @@ namespace Travelo.API.Controllers
             }
             return Ok(result);
         }
-    }
+    
 
 
         [HttpGet("Google-Login")]
