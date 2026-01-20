@@ -1,4 +1,5 @@
-﻿using Travelo.Application.Common.Responses;
+﻿using System.Threading.Tasks;
+using Travelo.Application.Common.Responses;
 using Travelo.Application.DTOs.Auth;
 
 namespace Travelo.Application.Interfaces
@@ -14,6 +15,7 @@ namespace Travelo.Application.Interfaces
         Task<GenericResponse<string>> ResetPasswordAsync(ResetPasswordDTO resetPasswordDTO);
         Task<GenericResponse<string>> ConfirmEmailAsync(ConfirmEmailDTO confirmEmailDTO);
         Task<GenericResponse<string>> ResendConfirmationEmailAsync(ResendConfirmEmailDTO resendConfirmEmailDTO);
+
 
     }
 }

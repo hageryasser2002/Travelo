@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Templates\Email\ConfirmEmail.html" />
@@ -31,13 +31,13 @@
     <None Remove="Templates\Email\ConfirmEmail.html" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+	<!-- NuGet Packages -->
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+		<PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
-    <ProjectReference Include="..\Travelo.Domain\Travelo.Domain.csproj" />
-  </ItemGroup>
+	
+	
 
 </Project>
