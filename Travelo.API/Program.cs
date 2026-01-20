@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
@@ -10,12 +11,15 @@ using System.Text;
 using Travelo.API.Middleware;
 using Travelo.Application.Interfaces;
 using Travelo.Application.Services.Auth;
+using Travelo.Application.Services.City;
+using Travelo.Application.Services.FileService;
 using Travelo.Application.UseCases.Auth;
+using Travelo.Application.UseCases.Hotels;
+using Travelo.Application.UseCases.Menu;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
 using Travelo.Infrastracture.Identity;
 using Travelo.Infrastracture.Repositories;
-
 
 var builder = WebApplication.CreateBuilder(args);
 //Database Connection
@@ -31,10 +35,14 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddOpenApi();
-builder.Services.AddScoped<Travelo.Application.Interfaces.IEmailSender, EmailSender>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<LoginUseCase>();
 builder.Services.AddScoped<RegisterUseCase>();
+builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IMenuRepository, MenuRepository>();
 //Identity Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
@@ -60,51 +68,56 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
     .AddDefaultTokenProviders();
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
 })
 .AddJwtBearer(options =>
 {
-    options.TokenValidationParameters = new TokenValidationParameters
+    options.TokenValidationParameters=new TokenValidationParameters
     {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = jwtSettings["Issuer"],
-        ValidAudience = jwtSettings["Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        ClockSkew = TimeSpan.Zero 
+        ValidateIssuer=true,
+        ValidateAudience=true,
+        ValidateLifetime=true,
+        ValidateIssuerSigningKey=true,
+        ValidIssuer=jwtSettings["Issuer"],
+        ValidAudience=jwtSettings["Audience"],
+        IssuerSigningKey=new SymmetricSecurityKey(key),
+        ClockSkew=TimeSpan.Zero
     };
 });
 builder.Services.AddDataProtection();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped(
     typeof(IGenericRepository<>),
     typeof(GenericRepository<>)
 );
 
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+
 builder.Services.AddScoped<RegisterUseCase>();
 builder.Services.AddScoped<Travelo.Application.UseCases.Hotels.GetFeaturedHotelsUseCase>();
+builder.Services.AddScoped<GetFeaturedHotelsUseCase>();
+builder.Services.AddScoped<GetHotelByIdUseCase>();
 
 
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opt =>
 opt.TokenLifespan=TimeSpan.FromHours(2));
 
-builder.Services.AddAuthentication(options => 
+builder.Services.AddAuthentication(options =>
 {
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+    options.DefaultScheme=CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme=GoogleDefaults.AuthenticationScheme;
 }
-    
+
 )
 .AddCookie(IdentityConstants.ApplicationScheme)
 .AddCookie(IdentityConstants.ExternalScheme)
 .AddGoogle(options =>
 {
-    options.ClientId = builder.Configuration["Google:ClientID"];
-    options.ClientSecret = builder.Configuration["Google:ClientSecret"];
-    options.SaveTokens = true;
+    options.ClientId=builder.Configuration["Google:ClientID"];
+    options.ClientSecret=builder.Configuration["Google:ClientSecret"];
+    options.SaveTokens=true;
     options.Scope.Add("profile");
     options.Scope.Add("email");
     options.ClaimActions.MapJsonKey("picture", "picture");
@@ -116,11 +129,22 @@ builder.Services.AddScoped<GoogleLoginUseCase>();
 
 var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfigruration>();
 builder.Services.AddSingleton(emailConfig);
-//builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<ForgotPasswordUseCase>();
 builder.Services.AddScoped<ResetPasswordUseCase>();
 builder.Services.AddScoped<ConfirmEmailUseCase>();
 builder.Services.AddScoped<ResendConfirmEmailUseCase>();
+
+builder.Services.AddScoped<GetMenuUseCase>();
+builder.Services.AddScoped<GetItemUseCase>();
+builder.Services.AddScoped<AddCategoryUseCase>();
+builder.Services.AddScoped<AddItemUseCase>();
+builder.Services.AddScoped<DeleteItemUseCase>();
+builder.Services.AddScoped<UpdateItemUseCase>();
+builder.Services.AddScoped<UpdateCategoryUseCase>();
+builder.Services.AddScoped<DeleteCategoryUseCase>();
+
+
+
 
 var app = builder.Build();
 
@@ -130,6 +154,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
+app.UseStaticFiles();
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 
