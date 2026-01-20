@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
+using Stripe;
 using System.Text;
 using Travelo.API.Middleware;
 using Travelo.Application.Interfaces;
 using Travelo.Application.Services.Auth;
 using Travelo.Application.Services.City;
 using Travelo.Application.Services.FileService;
+using Travelo.Application.Services.Payment;
 using Travelo.Application.UseCases.Auth;
 using Travelo.Application.UseCases.Hotels;
 using Travelo.Application.UseCases.Menu;
@@ -142,8 +144,12 @@ builder.Services.AddScoped<DeleteItemUseCase>();
 builder.Services.AddScoped<UpdateItemUseCase>();
 builder.Services.AddScoped<UpdateCategoryUseCase>();
 builder.Services.AddScoped<DeleteCategoryUseCase>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<IPaymentServices, PaymentServices>();
 
-
+// Configure Stripe settings
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
+StripeConfiguration.ApiKey=builder.Configuration["Stripe:SecretKey"];
 
 
 var app = builder.Build();
