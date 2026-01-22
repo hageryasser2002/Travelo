@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Travelo.Domain.models.Entities;
+using Travelo.Domain.Models.Entities;
 using Travelo.Domain.Shared;
 
 namespace Travelo.Domain.Models.Entities

@@ -13,6 +13,7 @@ using Travelo.Application.Interfaces;
 using Travelo.Application.Services.Auth;
 using Travelo.Application.Services.City;
 using Travelo.Application.Services.FileService;
+using Travelo.Application.Services.Flight;
 using Travelo.Application.UseCases.Auth;
 using Travelo.Application.UseCases.Hotels;
 using Travelo.Application.UseCases.Menu;
@@ -42,6 +43,8 @@ builder.Services.AddScoped<RegisterUseCase>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IFlightRepository, FlightRepository>();
+builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IMenuRepository, MenuRepository>();
 //Identity Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

@@ -2,7 +2,7 @@
 using Travelo.Domain.Models.Enums;
 using Travelo.Domain.Shared;
 
-namespace Travelo.Domain.models.Entities
+namespace Travelo.Domain.Models.Entities
 {
     public class Booking : BaseEntity
     {

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
-using Travelo.Domain.models.Entities;
 using Travelo.Domain.Models.Entities;
 
 namespace Travelo.Infrastracture.Contexts
@@ -25,6 +23,8 @@ namespace Travelo.Infrastracture.Contexts
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<ThingToDo> ThingsToDo { get; set; }
+        public DbSet<Ticket> Ticket { get; set; }
+
 
 
         override protected void OnModelCreating (ModelBuilder builder)
