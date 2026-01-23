@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Travelo.Domain.Models.Entities
 {
     public class ApplicationUser : IdentityUser
     {
         public bool PasswordRestCode { get; set; }
+
+        public IEnumerable<Review>? Reviews { get; set; } = new List<Review>();
     }
+
 }

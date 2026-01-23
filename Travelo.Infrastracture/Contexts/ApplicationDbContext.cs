@@ -1,20 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Travelo.Domain.models.Entities;
 using Travelo.Domain.Models.Entities;
 
 namespace Travelo.Infrastracture.Contexts
 {
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
+    public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {
-
         public DbSet<Aircraft> Aircrafts { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
@@ -28,10 +21,12 @@ namespace Travelo.Infrastracture.Contexts
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-
-
-
-        override protected void OnModelCreating(ModelBuilder builder)
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<ThingToDo> ThingsToDo { get; set; }
+        public DbSet<RoomBooking> RoomBookings { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        protected override void OnModelCreating (ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
@@ -42,10 +37,38 @@ namespace Travelo.Infrastracture.Contexts
             builder.Ignore<IdentityUserLogin<string>>();
             builder.Ignore<IdentityUserClaim<string>>();
             builder.Ignore<IdentityUserToken<string>>();
-            builder.Ignore<IdentityUserClaim<string>>();
+            builder.Entity<Payment>()
+               .HasOne(p => p.Hotel)
+               .WithMany()
+               .HasForeignKey(p => p.HotelId)
+               .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Payment>()
+                .HasOne(p => p.Room)
+                .WithMany()
+                .HasForeignKey(p => p.RoomId)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Payment>()
+                .HasOne(p => p.User)
+                .WithMany()
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Room>()
+                .HasOne(r => r.Hotel)
+                .WithMany(h => h.Rooms)
+                .HasForeignKey(r => r.HotelId)
+                .OnDelete(DeleteBehavior.Restrict);
+            var decimalProperties = builder.Model.GetEntityTypes()
+                   .SelectMany(t => t.GetProperties())
+                   .Where(p => p.ClrType==typeof(decimal)||p.ClrType==typeof(decimal?));
+
+            foreach (var property in decimalProperties)
+            {
+                property.SetPrecision(18);
+                property.SetScale(2);
+            }
         }
     }
 }

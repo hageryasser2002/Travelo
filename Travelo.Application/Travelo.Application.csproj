@@ -1,16 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Templates\Email\ResetPasswordEmail.html" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <EmbeddedResource Include="Templates\Email\ConfirmEmail.html" />
     <EmbeddedResource Include="Templates\Email\ResetPasswordEmail.html" />
   </ItemGroup>
 
@@ -18,15 +15,26 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Travelo.Domain\Travelo.Domain.csproj" />
+    <Compile Remove="Interfaces\NewFolder\**" />
+    <Compile Remove="Mapping\**" />
+    <EmbeddedResource Remove="Interfaces\NewFolder\**" />
+    <EmbeddedResource Remove="Mapping\**" />
+    <None Remove="Interfaces\NewFolder\**" />
+    <None Remove="Mapping\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\" />
+    <None Remove="Templates\Email\ConfirmEmail.html" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
-    <ProjectReference Include="..\Travelo.Domain\Travelo.Domain.csproj" />
-  </ItemGroup>
+	<!-- NuGet Packages -->
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+		<PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+		<PackageReference Include="Stripe.net" Version="50.2.0" />
+	</ItemGroup>
+
+	
+	
 
 </Project>
