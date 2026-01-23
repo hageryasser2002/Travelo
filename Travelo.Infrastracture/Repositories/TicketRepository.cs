@@ -16,6 +16,7 @@ namespace Travelo.Infrastracture.Repositories
 
         public async Task AddAsync(Ticket ticket)
         {
+            ticket.CreatedOn = DateTime.UtcNow;
             await _context.Ticket.AddAsync(ticket);
             await _context.SaveChangesAsync();
         }
@@ -24,25 +25,27 @@ namespace Travelo.Infrastracture.Repositories
         {
             return await _context.Ticket
                 .Include(t => t.Booking)
-                .FirstOrDefaultAsync(t => t.Id == id);
+                .FirstOrDefaultAsync(t => t.Id == id && !t.IsDeleted);
         }
 
         public async Task<Ticket?> GetByBookingIdAsync(int bookingId)
         {
             return await _context.Ticket
                 .Include(t => t.Booking)
-                .FirstOrDefaultAsync(t => t.BookingId == bookingId);
+                .FirstOrDefaultAsync(t => t.BookingId == bookingId && !t.IsDeleted);
         }
 
         public async Task UpdateAsync(Ticket ticket)
         {
+            ticket.ModifiedOn = DateTime.UtcNow;
             _context.Ticket.Update(ticket);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(Ticket ticket)
-        {
-            _context.Ticket.Remove(ticket);
+        {           
+            ticket.ModifiedOn = DateTime.UtcNow;
+            ticket.Delete();
             await _context.SaveChangesAsync();
         }
     }

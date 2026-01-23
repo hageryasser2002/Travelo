@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Travelo.Application.Interfaces;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
@@ -21,22 +16,27 @@ namespace Travelo.Infrastracture.Repositories
 
         public async Task<List<Flight>> GetAllAsync()
         {
-            return await _context.Flights.ToListAsync();
+            return await _context.Flights
+                .Where(f => !f.IsDeleted)
+                .ToListAsync();
         }
 
         public async Task<Flight?> GetByIdAsync(int id)
         {
-            return await _context.Flights.FindAsync(id);
+            return await _context.Flights
+                .FirstOrDefaultAsync(f => f.Id == id && !f.IsDeleted);
         }
 
         public async Task AddAsync(Flight flight)
         {
+            flight.CreatedOn = DateTime.UtcNow;
             _context.Flights.Add(flight);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Flight flight)
         {
+            flight.ModifiedOn = DateTime.UtcNow;
             _context.Flights.Update(flight);
             await _context.SaveChangesAsync();
         }
@@ -46,10 +46,12 @@ namespace Travelo.Infrastracture.Repositories
             var flight = await _context.Flights.FindAsync(id);
             if (flight != null)
             {
-                _context.Flights.Remove(flight);
+                flight.Delete();
+                flight.ModifiedOn = DateTime.UtcNow;
                 await _context.SaveChangesAsync();
             }
         }
+
     }
 
 }

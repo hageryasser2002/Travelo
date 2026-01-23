@@ -1,8 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
-using Travelo.Application.DTOs.Booking;
+﻿using Travelo.Application.DTOs.Booking;
 using Travelo.Application.Interfaces;
-using Travelo.Domain.Models.Entities;
 using Travelo.Domain.Models.Enums;
 
 namespace Travelo.Application.Services.Booking
@@ -20,7 +17,6 @@ namespace Travelo.Application.Services.Booking
             _flightRepository = flightRepository;
         }
 
-        // 1️⃣ Create Flight Booking
         public async Task<BookingDto> CreateFlightBookingAsync(CreateBookingDto dto)
         {
             var flight = await _flightRepository.GetByIdAsync(dto.FlightId);
@@ -40,7 +36,6 @@ namespace Travelo.Application.Services.Booking
             return MapToDto(booking);
         }
 
-        // 2️⃣ Confirm Booking (Fake Payment)
         public async Task<BookingDto> ConfirmBookingAsync(int bookingId)
         {
             var booking = await _bookingRepository.GetByIdAsync(bookingId);
@@ -61,7 +56,6 @@ namespace Travelo.Application.Services.Booking
             return MapToDto(booking);
         }
 
-        // 3️⃣ Cancel Booking
         public async Task CancelBookingAsync(int bookingId)
         {
             var booking = await _bookingRepository.GetByIdAsync(bookingId);
@@ -72,7 +66,6 @@ namespace Travelo.Application.Services.Booking
             await _bookingRepository.SaveChangesAsync();
         }
 
-        // 🔹 Helper method (زي FlightService بالظبط)
         private BookingDto MapToDto(Travelo.Domain.Models.Entities.Booking b)
         {
             return new BookingDto

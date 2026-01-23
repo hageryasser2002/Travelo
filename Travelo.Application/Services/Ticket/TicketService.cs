@@ -1,6 +1,5 @@
 ﻿using Travelo.Application.DTOs.Ticket;
 using Travelo.Application.Interfaces;
-using Travelo.Domain.Models.Entities;
 using Travelo.Domain.Models.Enums;
 
 namespace Travelo.Application.Services.Ticket

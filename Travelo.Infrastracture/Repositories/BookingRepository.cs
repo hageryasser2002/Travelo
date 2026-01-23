@@ -16,14 +16,16 @@ namespace Travelo.Infrastracture.Repositories
 
         public async Task AddAsync(Booking booking)
         {
-            await _context.Bookings.AddAsync(booking);
+            booking.CreatedOn = DateTime.UtcNow;
+            _context.Bookings.Add(booking);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Booking?> GetByIdAsync(int id)
         {
             return await _context.Bookings
                 .Include(b => b.Ticket)
-                .FirstOrDefaultAsync(b => b.Id == id);
+                .FirstOrDefaultAsync(b => b.Id == id && !b.IsDeleted);
         }
 
         public async Task SaveChangesAsync()
