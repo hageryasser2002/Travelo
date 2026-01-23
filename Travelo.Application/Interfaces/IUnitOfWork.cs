@@ -8,6 +8,7 @@
         IGenericRepository<T> Repository<T> () where T : class;
         IReviewRepository Reviews { get; }
         IMenuRepository Menu { get; }
+        ICartRepository Cart { get; }
 
         Task<int> CompleteAsync ();
         Task SaveChangesAsync ();

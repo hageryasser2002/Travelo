@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Travelo.Infrastracture.Contexts;
 
@@ -11,9 +12,11 @@ using Travelo.Infrastracture.Contexts;
 namespace Travelo.Infrastracture.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260121151222_AddRestaurantAddEditMenuItem")]
+    partial class AddRestaurantAddEditMenuItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1037,7 +1040,7 @@ namespace Travelo.Infrastracture.Migrations
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Restaurant", b =>
                 {
                     b.HasOne("Travelo.Domain.Models.Entities.City", "City")
-                        .WithMany("Restaurants")
+                        .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1126,8 +1129,6 @@ namespace Travelo.Infrastracture.Migrations
             modelBuilder.Entity("Travelo.Domain.Models.Entities.City", b =>
                 {
                     b.Navigation("Hotels");
-
-                    b.Navigation("Restaurants");
                 });
 
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Hotel", b =>

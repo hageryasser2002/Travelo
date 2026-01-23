@@ -9,13 +9,16 @@ using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using System.Text;
 using Travelo.API.Middleware;
+using Travelo.Application.DTOs.Cart;
 using Travelo.Application.Interfaces;
 using Travelo.Application.Services.Auth;
 using Travelo.Application.Services.City;
 using Travelo.Application.Services.FileService;
 using Travelo.Application.UseCases.Auth;
+using Travelo.Application.UseCases.Carts;
 using Travelo.Application.UseCases.Hotels;
 using Travelo.Application.UseCases.Menu;
+using Travelo.Application.UseCases.Restaurant;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
 using Travelo.Infrastracture.Identity;
@@ -43,6 +46,7 @@ builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<ICityRepository, CityRepository>();
 builder.Services.AddScoped<IMenuRepository, MenuRepository>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
 //Identity Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
@@ -134,6 +138,12 @@ builder.Services.AddScoped<ResetPasswordUseCase>();
 builder.Services.AddScoped<ConfirmEmailUseCase>();
 builder.Services.AddScoped<ResendConfirmEmailUseCase>();
 
+builder.Services.AddScoped<AddRestaurantUseCase>();
+builder.Services.AddScoped<GetRestaurantUseCase>();
+builder.Services.AddScoped<UpdateRestaurantUseCase>();
+builder.Services.AddScoped<RemoveRestaurantUseCase>();
+
+
 builder.Services.AddScoped<GetMenuUseCase>();
 builder.Services.AddScoped<GetItemUseCase>();
 builder.Services.AddScoped<AddCategoryUseCase>();
@@ -142,6 +152,13 @@ builder.Services.AddScoped<DeleteItemUseCase>();
 builder.Services.AddScoped<UpdateItemUseCase>();
 builder.Services.AddScoped<UpdateCategoryUseCase>();
 builder.Services.AddScoped<DeleteCategoryUseCase>();
+
+builder.Services.AddScoped<AddToCartUseCase>();
+builder.Services.AddScoped<GetCartUseCase>();
+builder.Services.AddScoped<RemoveCartItemUseCase>();
+builder.Services.AddScoped<RemoveFromCartUseCase>();
+
+
 
 
 

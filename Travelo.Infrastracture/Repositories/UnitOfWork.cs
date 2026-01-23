@@ -33,13 +33,17 @@ namespace Travelo.Infrastracture.Repositories
             Cities = new CityRepository(_context);
             Reviews = new ReviewRepository(_context);
             Menu = new MenuRepository(_context);
+            Cart = new CartRepository(_context);
         }
+
 
         public IAuthRepository Auth { get; private set; }
         public IHotelRepository Hotels { get; private set; }
         public ICityRepository Cities { get; private set; }
         public IReviewRepository Reviews { get; private set; }
         public IMenuRepository Menu { get; private set; }
+
+        public ICartRepository Cart { get; private set; }
 
         public IGenericRepository<T> Repository<T>() where T : class
         {
