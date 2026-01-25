@@ -20,6 +20,7 @@ using Travelo.Application.Services.Ticket;
 using Travelo.Application.UseCases.Auth;
 using Travelo.Application.UseCases.Hotels;
 using Travelo.Application.UseCases.Menu;
+using Travelo.Application.UseCases.Restaurant;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
 using Travelo.Infrastracture.Identity;
@@ -57,6 +58,9 @@ builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IMenuRepository, MenuRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddScoped<ChangePasswordUseCase>();
+builder.Services.AddScoped<AddAdminUseCase>();
+builder.Services.AddScoped<AddRestaurantUseCase>();
+builder.Services.AddScoped<AddHotelUseCase>();
 
 //Identity Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
