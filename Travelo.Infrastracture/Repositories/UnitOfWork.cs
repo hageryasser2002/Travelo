@@ -12,7 +12,6 @@ namespace Travelo.Infrastracture.Repositories
         private readonly IEmailSender _emailSender;
         private readonly IConfiguration _configuration;
         private readonly ApplicationDbContext _context;
-
         private readonly Dictionary<Type, object> _repositories;
 
         public UnitOfWork (
@@ -25,10 +24,9 @@ namespace Travelo.Infrastracture.Repositories
             _userManager=userManager;
             _emailSender=emailSender;
             _configuration=configuration;
-
             _repositories=new Dictionary<Type, object>();
 
-<<<<<<< HEAD
+            // Initialize all repositories
             Auth=new AuthRepository(_userManager, _context, _configuration, _emailSender);
             Hotels=new HotelRepository(_context);
             Cities=new CityRepository(_context);
@@ -38,37 +36,19 @@ namespace Travelo.Infrastracture.Repositories
             RoomBookings=new RoomBookingRepository(_context);
             Payment=new PaymentRepository(_context);
             Cart=new CartRepository(_context);
-=======
-            Auth = new AuthRepository(_userManager, _context, _configuration, _emailSender);
-            Hotels = new HotelRepository(_context);
-            Cities = new CityRepository(_context);
-            Reviews = new ReviewRepository(_context);
-            Menu = new MenuRepository(_context);
-            Cart = new CartRepository(_context);
->>>>>>> origin/Reham
         }
-
 
         public IAuthRepository Auth { get; private set; }
         public IHotelRepository Hotels { get; private set; }
         public ICityRepository Cities { get; private set; }
         public IReviewRepository Reviews { get; private set; }
         public IMenuRepository Menu { get; private set; }
-
-<<<<<<< HEAD
         public IRoomRepository Rooms { get; private set; }
         public IRoomBookingRepository RoomBookings { get; private set; }
         public IPaymentRepository Payment { get; private set; }
-
-
         public ICartRepository Cart { get; private set; }
 
         public IGenericRepository<T> Repository<T> () where T : class
-=======
-        public ICartRepository Cart { get; private set; }
-
-        public IGenericRepository<T> Repository<T>() where T : class
->>>>>>> origin/Reham
         {
             var type = typeof(T);
 
