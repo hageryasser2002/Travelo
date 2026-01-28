@@ -1,4 +1,5 @@
-﻿using Stripe.Checkout;
+﻿using Microsoft.EntityFrameworkCore;
+using Stripe.Checkout;
 using Travelo.Application.Common.Responses;
 using Travelo.Application.DTOs.Payment;
 using Travelo.Application.Interfaces;
@@ -168,7 +169,7 @@ namespace Travelo.Application.Services.Payment
 
         public async Task<GenericResponse<PaymentRes>> FlightBookingPayment (FlightPaymentRequest req, string userId, string HTTPReq)
         {
-            var flight = await unitOfWork.Flights.GetByIdAsync(req.FlightId);
+            var flight = await unitOfWork.Flights.GetById((int)req.FlightId, q => q.Include(f => f.Aircraft));
             if (flight==null)
             {
                 return GenericResponse<PaymentRes>.FailureResponse("Flight not found");
@@ -213,8 +214,9 @@ namespace Travelo.Application.Services.Payment
                             }
                     },
                     Mode="payment",
-                    SuccessUrl=$"{HTTPReq}/api/Payment/OrderSuccess/{payment.Id}",
-                    CancelUrl=$"{HTTPReq}/api/Payment/cancel",
+                    // ... other options ...
+                    SuccessUrl=$"{HTTPReq}/api/FlightBooking/FlightSuccess/{payment.Id}",
+                    CancelUrl=$"{HTTPReq}/api/FlightBooking/Cancel",
                 };
                 var service = new SessionService();
                 Session session = await service.CreateAsync(options); // Use Async
@@ -284,19 +286,15 @@ namespace Travelo.Application.Services.Payment
             {
                 return GenericResponse<PaymentRes>.FailureResponse("Payment not found");
             }
-            payment.Status=PaymentStatus.Completed;
             if (payment.PaymentFor==PaymentFor.Flight)
             {
-                var flight = await unitOfWork.Flights.GetByIdAsync((int)payment.FlightId);
+                var flight = await unitOfWork.Flights.GetById((int)payment.FlightId, q => q.Include(f => f.Aircraft));
+                if (flight==null||flight.Aircraft==null)
+                    return GenericResponse<PaymentRes>.FailureResponse("Flight or Aircraft not found");
                 if (flight.Aircraft.CountOfSeats<payment.NumberOfTickets)
-                {
                     return GenericResponse<PaymentRes>.FailureResponse("Not enough seats available");
-                }
                 flight.Aircraft.CountOfSeats-=(int)payment.NumberOfTickets;
-                await unitOfWork.Flights.UpdateAsync(flight);
                 payment.Status=PaymentStatus.Completed;
-                _payment.Update(payment);
-                await unitOfWork.SaveChangesAsync();
                 var flightBooking = new FlightBooking
                 {
                     FlightId=(int)payment.FlightId,
@@ -306,12 +304,9 @@ namespace Travelo.Application.Services.Payment
                     Status=FlightBookingStatus.Confirmed
                 };
                 await unitOfWork.FlightBookings.Add(flightBooking);
+                _payment.Update(payment);
                 await unitOfWork.SaveChangesAsync();
-
-                return GenericResponse<PaymentRes>.SuccessResponse(new PaymentRes
-                {
-                    Message="Flight payment successful"
-                });
+                return GenericResponse<PaymentRes>.SuccessResponse(new PaymentRes { Message="Flight booking confirmed!" });
             }
             if (payment.PaymentFor==PaymentFor.Room)
             {
