@@ -58,6 +58,5 @@ namespace Travelo.API.Controllers
             var result = await cityService.GetCityHotels(id);
             return !result.Success ? BadRequest(result) : Ok(result);
         }
-
     }
 }
