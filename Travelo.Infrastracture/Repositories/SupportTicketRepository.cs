@@ -51,16 +51,13 @@ namespace Travelo.Infrastracture.Repositories
         {
             var tickets = await _context.SupportTickets
                 .Include(t => t.User)
-                    .ThenInclude(u => u.Doctor)
+                    .ThenInclude(u => u.Hotel)
                 .Include(t => t.User)
-                    .ThenInclude(u => u.Patient)
+                    .ThenInclude(u => u.Restaurant)
                
                 .Select(t => new GetSupportTicketDTO
                 {
                     userName = t.User.UserName!,
-                    Experience = t.User.Doctor != null
-                        ? t.User.Doctor.ExperienceYears
-                        : null,
                     Subject = t.Subject,
                     Status = t.Status
                 })
@@ -85,9 +82,9 @@ namespace Travelo.Infrastracture.Repositories
         {
             var ticket = await _context.SupportTickets
                 .Include(t => t.User)
-                    .ThenInclude(u => u.Doctor)
+                    .ThenInclude(u => u.Hotel)
                 .Include(t => t.User)
-                    .ThenInclude(u => u.Patient)
+                    .ThenInclude(u => u.Restaurant)
                 .Where(t => t.userId == userId && !string.IsNullOrEmpty(t.Reply))
                 .OrderByDescending(t => t.Id) 
                 .FirstOrDefaultAsync();

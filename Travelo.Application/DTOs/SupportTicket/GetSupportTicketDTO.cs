@@ -1,4 +1,4 @@
-﻿using Diagnosis.Domain.Models.Entites;
+﻿using Travelo.Domain.Models.Entites;
 using System;
 using System.Collections.Generic;               
 using System.Linq;
@@ -11,7 +11,6 @@ namespace Travelo.Application.DTOs.SupportTicket
     {
        
         public string? userName { get; set; }
-        public int? Experience { get; set; }
         public string? Subject { get; set; }
         public string? Status { get; set; }
     }
