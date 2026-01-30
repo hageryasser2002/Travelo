@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 using Travelo.Domain.Models.Entites;
+using Travelo.Domain.Models.Entities;
 
 namespace Travelo.Infrastracture.Contexts
 {
