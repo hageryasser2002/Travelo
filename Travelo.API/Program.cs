@@ -105,6 +105,8 @@ builder.Services.AddScoped<GetHotelByIdUseCase>();
 builder.Services.AddScoped<GetHotelRoomsUseCase>();
 builder.Services.AddScoped<GetThingsToDoUseCase>();
 builder.Services.AddScoped<GetSimilarHotelsUseCase>();
+builder.Services.AddScoped<GetHotelReviewsUseCase>();
+
 
 // Cart Use Cases
 builder.Services.AddScoped<AddToCartUseCase>();

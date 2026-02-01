@@ -70,7 +70,7 @@ namespace Travelo.API.Controllers
 
 
 
-        [HttpGet("{hotelId}/rooms")] //  api/Hotels/6/rooms
+        [HttpGet("{hotelId}/rooms")]
         public async Task<IActionResult> GetRooms(int hotelId)
         {
             var response = await _getHotelRoomsUseCase.ExecuteAsync(hotelId);
@@ -81,12 +81,24 @@ namespace Travelo.API.Controllers
             return BadRequest(response);
         }
 
+       
+       
+        [HttpGet("{hotelId}/reviews")]
+        public async Task<IActionResult> GetHotelReviews(
+            int hotelId,
+            [FromQuery] int pageNum = 1,
+            [FromQuery] int pageSize = 5)
+        {
+            var response = await _getHotelReviewsUseCase.GetHotelReview(hotelId, pageNum, pageSize);
 
-        //reviews
+            if (response.Success)
+                return Ok(response);
+
+            return BadRequest(response);
+        }
 
 
-
-        //  GET /api/Hotels/6/things-to-do
+        
         [HttpGet("{hotelId}/things-to-do")]
         public async Task<IActionResult> GetThingsToDo(int hotelId)
         {
