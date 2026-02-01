@@ -274,6 +274,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Travelo.API.Controllers.CityController",
+    "Method": "GetCityHotels",
+    "RelativePath": "api/City/{id}/Hotels",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.CityController",
+    "Method": "GetCityRestaurants",
+    "RelativePath": "api/City/{id}/restaurants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Travelo.API.Controllers.FlightBookingController",
     "Method": "BookFlight",
     "RelativePath": "api/FlightBooking/BookFlight",
@@ -389,6 +421,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.FlightsController",
+    "Method": "Search",
+    "RelativePath": "api/Flights/search",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filter",
+        "Type": "Travelo.Application.DTOs.Flight.FlightFilterDto",
         "IsRequired": true
       }
     ],
@@ -856,6 +904,38 @@
   },
   {
     "ContainingType": "Travelo.API.Controllers.ReviewController",
+    "Method": "GetAirlinesReviews",
+    "RelativePath": "api/Review/airline/{airlineId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "airlineId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.ReviewController",
+    "Method": "GetFlightReviews",
+    "RelativePath": "api/Review/flight/{flightId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "flightId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.ReviewController",
     "Method": "GetHotelReviews",
     "RelativePath": "api/Review/hotel/{hotelId}",
     "HttpMethod": "GET",
@@ -1056,6 +1136,111 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Travelo.API.Controllers.WishlistController",
+    "Method": "CreateWishlist",
+    "RelativePath": "api/Wishlist",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Travelo.Application.DTOs.Wishlist.WishlistRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.WishlistController",
+    "Method": "GetWishList",
+    "RelativePath": "api/Wishlist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.WishlistController",
+    "Method": "UpdateWishlist",
+    "RelativePath": "api/Wishlist/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Travelo.Application.DTOs.Wishlist.WishlistRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.WishlistController",
+    "Method": "DeleteWishlist",
+    "RelativePath": "api/Wishlist/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.WishlistController",
+    "Method": "GetWishlistsWithDetails",
+    "RelativePath": "api/Wishlist/details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.WishlistItemController",
+    "Method": "AddItem",
+    "RelativePath": "api/WishlistItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Travelo.Application.DTOs.WishlistItem.WishlistItemReqDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.WishlistItemController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/WishlistItem/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Travelo.API.Controllers.AuthController",
     "Method": "ChangePassword",
     "RelativePath": "Auth/change-password",
@@ -1089,6 +1274,52 @@
   },
   {
     "ContainingType": "Travelo.API.Controllers.AuthController",
+    "Method": "UpdateProfile",
+    "RelativePath": "Auth/edit_ProfileData",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProfilePictureUrl",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateOfBirth",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Gender",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.AuthController",
     "Method": "ForgotPassword",
     "RelativePath": "Auth/forgot-password",
     "HttpMethod": "POST",
@@ -1101,6 +1332,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Travelo.API.Controllers.AuthController",
+    "Method": "GetUserData",
+    "RelativePath": "Auth/Get_User_Profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -1182,6 +1423,110 @@
       {
         "Name": "resetPasswordDTO",
         "Type": "Travelo.Application.DTOs.Auth.ResetPasswordDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diagnosis.API.Controllers.SupportTicketController",
+    "Method": "GetSupportTicketsAsync",
+    "RelativePath": "SupportTicket/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Travelo.Application.DTOs.SupportTicket.GetSupportTicketDTO, Travelo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Diagnosis.API.Controllers.SupportTicketController",
+    "Method": "GetSupportTicketContentAsync",
+    "RelativePath": "SupportTicket/content/{ticketId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticketId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Travelo.Application.DTOs.SupportTicket.GetSupportTicketDTO, Travelo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Diagnosis.API.Controllers.SupportTicketController",
+    "Method": "CreateSupportTicketAsync",
+    "RelativePath": "SupportTicket/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supportTicketDTO",
+        "Type": "Travelo.Application.DTOs.SupportTicket.SupportTicketDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diagnosis.API.Controllers.SupportTicketController",
+    "Method": "AddSupportTicketReplyAsync",
+    "RelativePath": "SupportTicket/reply",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supportTicketReplyDTO",
+        "Type": "Travelo.Application.DTOs.SupportTicket.AddSupportTicketReplyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diagnosis.API.Controllers.SupportTicketController",
+    "Method": "GetLatestReplyByUserAsync",
+    "RelativePath": "SupportTicket/reply",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Diagnosis.API.Controllers.SupportTicketController",
+    "Method": "GetSupportTicketAsync",
+    "RelativePath": "SupportTicket/ticket/{ticketId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticketId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

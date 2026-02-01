@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Travelo.Infrastracture")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d18eae14afc8daca2c12cbe012539c315e56ee2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a857e05959dc271a82e2e5af693c46ccedc014c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Travelo.Infrastracture")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Travelo.Infrastracture")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,18 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\",
+  "WorkspaceRootPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|c:\\fullstack\\trvelo\\projct\\travelo\\travelo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}|Travelo.Infrastracture\\Travelo.Infrastracture.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.infrastracture\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}|Travelo.Infrastracture\\Travelo.Infrastracture.csproj|solutionrelative:travelo.infrastracture\\repositories\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\auth\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\auth\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\usecases\\auth\\getuserprofileusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\usecases\\auth\\getuserprofileusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}|Travelo.Domain\\Travelo.Domain.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.domain\\models\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E74AA4A1-4F24-4DDF-BBF8-2ECC8F65C6B2}|Travelo.Domain\\Travelo.Domain.csproj|solutionrelative:travelo.domain\\models\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\interfaces\\ioauthgooglerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\interfaces\\ioauthgooglerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\interfaces\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\interfaces\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\usecases\\auth\\updateuserprofileusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\usecases\\auth\\updateuserprofileusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|solutionrelative:travelo.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|c:\\fullstack\\trvelo\\projct\\travelo\\travelo.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|solutionrelative:travelo.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\services\\wishlist\\wishlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\services\\wishlist\\wishlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|c:\\fullstack\\trvelo\\projct\\travelo\\travelo.api\\controllers\\ordercheckoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|solutionrelative:travelo.api\\controllers\\ordercheckoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\wishlistitem\\wishlistitemreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\wishlistitem\\wishlistitemreqdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\wishlistitem\\wishlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\wishlistitem\\wishlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\services\\wishlist\\iwishlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\services\\wishlist\\iwishlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\services\\wishlistitem\\wishlistitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\services\\wishlistitem\\wishlistitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\services\\wishlistitem\\iwishlistitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\services\\wishlistitem\\iwishlistitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.api\\controllers\\wishlistitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|solutionrelative:travelo.api\\controllers\\wishlistitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}|Travelo.Infrastracture\\Travelo.Infrastracture.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.infrastracture\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E6C7B1-CFA0-4534-8DA5-F1FDB0628B97}|Travelo.Infrastracture\\Travelo.Infrastracture.csproj|solutionrelative:travelo.infrastracture\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\wishlist\\wishlistrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\wishlist\\wishlistrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.api\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F22AB23-C989-42C3-BF1B-CB5640B54AA0}|Travelo.API\\Travelo.API.csproj|solutionrelative:travelo.api\\controllers\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\wishlist\\wishlistupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\wishlist\\wishlistupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|c:\\fullstack\\trvelo\\projct\\porj\\travelo\\travelo.application\\dtos\\wishlist\\wishlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1C4185A-FBDA-43F0-BA77-4D7C3CBC6796}|Travelo.Application\\Travelo.Application.csproj|solutionrelative:travelo.application\\dtos\\wishlist\\wishlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,41 +138,288 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\Program.cs",
-              "RelativeDocumentMoniker": "Travelo.API\\Program.cs",
-              "ToolTip": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\Program.cs",
-              "RelativeToolTip": "Travelo.API\\Program.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAAKgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:11:20.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Travelo.API\\appsettings.json",
-              "ToolTip": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\appsettings.json",
-              "RelativeToolTip": "Travelo.API\\appsettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-29T17:10:44.7Z",
+              "Title": "AuthResponseDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Auth\\AuthResponseDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\Auth\\AuthResponseDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Auth\\AuthResponseDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\Auth\\AuthResponseDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:38:31.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderCheckoutController.cs",
-              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\Controllers\\OrderCheckoutController.cs",
-              "RelativeDocumentMoniker": "Travelo.API\\Controllers\\OrderCheckoutController.cs",
-              "ToolTip": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\Controllers\\OrderCheckoutController.cs",
-              "RelativeToolTip": "Travelo.API\\Controllers\\OrderCheckoutController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Title": "UserProfileDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Auth\\UserProfileDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\Auth\\UserProfileDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Auth\\UserProfileDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\Auth\\UserProfileDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAABFwAcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:10:21.818Z",
+              "WhenOpened": "2026-02-01T19:36:11.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Models\\Entities\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Travelo.Domain\\Models\\Entities\\ApplicationUser.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Models\\Entities\\ApplicationUser.cs",
+              "RelativeToolTip": "Travelo.Domain\\Models\\Entities\\ApplicationUser.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAABAwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:35:25.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetUserProfileUseCase.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\UseCases\\Auth\\GetUserProfileUseCase.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\UseCases\\Auth\\GetUserProfileUseCase.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\UseCases\\Auth\\GetUserProfileUseCase.cs",
+              "RelativeToolTip": "Travelo.Application\\UseCases\\Auth\\GetUserProfileUseCase.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAIBFwA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:31:22.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Repositories\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "Travelo.Infrastracture\\Repositories\\AuthRepository.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Repositories\\AuthRepository.cs",
+              "RelativeToolTip": "Travelo.Infrastracture\\Repositories\\AuthRepository.cs",
+              "ViewState": "AgIAAN8BAAAAAAAAAAAUwOYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:30:24.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IOAuthGoogleRepository.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Interfaces\\IOAuthGoogleRepository.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Interfaces\\IOAuthGoogleRepository.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Interfaces\\IOAuthGoogleRepository.cs",
+              "RelativeToolTip": "Travelo.Application\\Interfaces\\IOAuthGoogleRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:30:20.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Interfaces\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Interfaces\\IAuthRepository.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Interfaces\\IAuthRepository.cs",
+              "RelativeToolTip": "Travelo.Application\\Interfaces\\IAuthRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:30:17.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateUserProfileUseCase.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\UseCases\\Auth\\UpdateUserProfileUseCase.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\UseCases\\Auth\\UpdateUserProfileUseCase.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\UseCases\\Auth\\UpdateUserProfileUseCase.cs",
+              "RelativeToolTip": "Travelo.Application\\UseCases\\Auth\\UpdateUserProfileUseCase.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA9wBgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:29:30.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WishlistItemService.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\WishlistItem\\WishlistItemService.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Services\\WishlistItem\\WishlistItemService.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\WishlistItem\\WishlistItemService.cs",
+              "RelativeToolTip": "Travelo.Application\\Services\\WishlistItem\\WishlistItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:09:07.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IWishlistItemService.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\WishlistItem\\IWishlistItemService.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Services\\WishlistItem\\IWishlistItemService.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\WishlistItem\\IWishlistItemService.cs",
+              "RelativeToolTip": "Travelo.Application\\Services\\WishlistItem\\IWishlistItemService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswAcAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:09:04.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WishlistItemReqDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\WishlistItem\\WishlistItemReqDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\WishlistItem\\WishlistItemReqDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\WishlistItem\\WishlistItemReqDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\WishlistItem\\WishlistItemReqDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:08:21.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WishlistItemDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\WishlistItem\\WishlistItemDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\WishlistItem\\WishlistItemDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\WishlistItem\\WishlistItemDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\WishlistItem\\WishlistItemDTO.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:08:07.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WishlistItemController.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Controllers\\WishlistItemController.cs",
+              "RelativeDocumentMoniker": "Travelo.API\\Controllers\\WishlistItemController.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Controllers\\WishlistItemController.cs",
+              "RelativeToolTip": "Travelo.API\\Controllers\\WishlistItemController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAA1wCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T19:07:40.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Program.cs",
+              "RelativeDocumentMoniker": "Travelo.API\\Program.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Program.cs",
+              "RelativeToolTip": "Travelo.API\\Program.cs",
+              "ViewState": "AgIAAMQAAAAAAAAAAAA1wMwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:42:49.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Travelo.Infrastracture\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "Travelo.Infrastracture\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAABAwGUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:25:26.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Travelo.Application\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:27:37.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "WishListUpdateDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Wishlist\\WishListUpdateDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\Wishlist\\WishListUpdateDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Wishlist\\WishListUpdateDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\Wishlist\\WishListUpdateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:06:59.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WishlistService.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\Wishlist\\WishlistService.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Services\\Wishlist\\WishlistService.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\Wishlist\\WishlistService.cs",
+              "RelativeToolTip": "Travelo.Application\\Services\\Wishlist\\WishlistService.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAA1wH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:04:24.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IWishlistService.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\Wishlist\\IWishlistService.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\Services\\Wishlist\\IWishlistService.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Services\\Wishlist\\IWishlistService.cs",
+              "RelativeToolTip": "Travelo.Application\\Services\\Wishlist\\IWishlistService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:04:03.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "WishlistRequestDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Wishlist\\WishlistRequestDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\Wishlist\\WishlistRequestDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Wishlist\\WishlistRequestDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\Wishlist\\WishlistRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:03:53.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WishlistDTO.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Wishlist\\WishlistDTO.cs",
+              "RelativeDocumentMoniker": "Travelo.Application\\DTOs\\Wishlist\\WishlistDTO.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\DTOs\\Wishlist\\WishlistDTO.cs",
+              "RelativeToolTip": "Travelo.Application\\DTOs\\Wishlist\\WishlistDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:03:48.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "WishlistController.cs",
+              "DocumentMoniker": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Controllers\\WishlistController.cs",
+              "RelativeDocumentMoniker": "Travelo.API\\Controllers\\WishlistController.cs",
+              "ToolTip": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Controllers\\WishlistController.cs",
+              "RelativeToolTip": "Travelo.API\\Controllers\\WishlistController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAxwCUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T18:03:45.106Z",
               "EditorCaption": ""
             }
           ]

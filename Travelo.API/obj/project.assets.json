@@ -5002,11 +5002,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\Travelo.API.csproj",
+      "projectUniqueName": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Travelo.API.csproj",
       "projectName": "Travelo.API",
-      "projectPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\Travelo.API.csproj",
+      "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\Travelo.API.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.API\\obj\\",
+      "outputPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5027,11 +5027,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Application\\Travelo.Application.csproj": {
-              "projectPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Application\\Travelo.Application.csproj"
+            "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Travelo.Application.csproj": {
+              "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Travelo.Application.csproj"
             },
-            "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj": {
-              "projectPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj"
+            "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj": {
+              "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj"
             }
           }
         }
