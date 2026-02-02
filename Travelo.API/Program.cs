@@ -15,6 +15,8 @@ using Travelo.Application.Services.FileService;
 using Travelo.Application.Services.Flight;
 using Travelo.Application.Services.Payment;
 using Travelo.Application.Services.Ticket;
+using Travelo.Application.Services.Wishlist;
+using Travelo.Application.Services.WishlistItem;
 using Travelo.Application.UseCases.Auth;
 using Travelo.Application.UseCases.Carts;
 using Travelo.Application.UseCases.Hotels;
@@ -23,12 +25,12 @@ using Travelo.Application.UseCases.Restaurant;
 using Travelo.Application.UseCases.Review;
 using Travelo.Domain.Models.Entities;
 using Travelo.Infrastracture.Contexts;
-using Travelo.Infrastracture.Identity;
 using Travelo.Infrastracture.Repositories;
+using Travelo.Persistence.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Database Connection
+//Database Connection
 var connectionString = builder.Configuration.GetConnectionString("IdentityConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString, sqlOptions =>
@@ -73,6 +75,8 @@ builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IPaymentServices, PaymentServices>();
+builder.Services.AddScoped<IWishlistService, WishlistService>();
+builder.Services.AddScoped<IWishlistItemService, WishlistItemService>();
 
 // Use Cases
 builder.Services.AddScoped<LoginUseCase>();
@@ -84,6 +88,8 @@ builder.Services.AddScoped<ResetPasswordUseCase>();
 builder.Services.AddScoped<ConfirmEmailUseCase>();
 builder.Services.AddScoped<ResendConfirmEmailUseCase>();
 builder.Services.AddScoped<GoogleLoginUseCase>();
+builder.Services.AddScoped<GetUserProfileUseCase>();
+builder.Services.AddScoped<UpdateUserProfileUseCase>();
 
 // Restaurant & Menu Use Cases
 builder.Services.AddScoped<AddRestaurantUseCase>();
@@ -188,26 +194,16 @@ builder.Services.AddCors(options =>
     options.AddPolicy("MyPolicy", policy =>
         policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 });
-
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
+StripeConfiguration.ApiKey=builder.Configuration["Stripe:SecretKey"];
 var app = builder.Build();
-
-// 1. DATA SEEDING SECTION
+// 2. MIDDLEWARE PIPELINE
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    try
-    {
-        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-        await IdentitySeeder.SeedRoles(roleManager);
-    }
-    catch (Exception ex)
-    {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while seeding the database.");
-    }
+    var context = services.GetRequiredService<ApplicationDbContext>();
+    await SeedData.SeedAsync(context);
 }
-
-// 2. MIDDLEWARE PIPELINE
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

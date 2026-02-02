@@ -16,6 +16,10 @@
         IOrderItemRepository OrderItems { get; }
         IFlightRepository Flights { get; }
         IFlightBookingRepository FlightBookings { get; }
+        IRestaurantRepository Restaurant { get; }
+        IWishlistItemRepository WishlistItems { get; }
+        IWishlistRepository Wishlists { get; }
+        ITicketRepository Ticket { get; }
 
         IGenericRepository<T> Repository<T> () where T : class;
 

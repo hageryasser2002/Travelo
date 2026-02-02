@@ -89,6 +89,45 @@ namespace Travelo.Infrastracture.Migrations
                     b.ToTable("UserRoles", (string)null);
                 });
 
+            modelBuilder.Entity("Travelo.Domain.Models.Entites.SupportTicket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Details")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Reply")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("userId");
+
+                    b.ToTable("SupportTickets");
+                });
+
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Aircraft", b =>
                 {
                     b.Property<int>("Id")
@@ -201,9 +240,15 @@ namespace Travelo.Infrastracture.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -211,6 +256,9 @@ namespace Travelo.Infrastracture.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -237,6 +285,9 @@ namespace Travelo.Infrastracture.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("ProfileImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -674,6 +725,48 @@ namespace Travelo.Infrastracture.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.FlightBooking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("BookingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FlightId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumberOfPassengers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FlightId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FlightBookings");
+                });
+
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Hotel", b =>
                 {
                     b.Property<int>("Id")
@@ -857,6 +950,12 @@ namespace Travelo.Infrastracture.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("PaymentType")
                         .HasColumnType("int");
 
@@ -877,9 +976,11 @@ namespace Travelo.Infrastracture.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -907,7 +1008,11 @@ namespace Travelo.Infrastracture.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quuantity")
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -931,10 +1036,19 @@ namespace Travelo.Infrastracture.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<DateTime?>("CheckInDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("CheckOutDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("HotelId")
+                    b.Property<int?>("FlightId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("HotelId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
@@ -943,13 +1057,19 @@ namespace Travelo.Infrastracture.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("NumberOfTickets")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("PaymentFor")
+                        .HasColumnType("int");
 
                     b.Property<string>("PaymentId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoomId")
+                    b.Property<int?>("RoomId")
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
@@ -960,6 +1080,8 @@ namespace Travelo.Infrastracture.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FlightId");
 
                     b.HasIndex("HotelId");
 
@@ -1151,6 +1273,12 @@ namespace Travelo.Infrastracture.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CheckInDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOutDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -1277,6 +1405,70 @@ namespace Travelo.Infrastracture.Migrations
                     b.ToTable("Ticket");
                 });
 
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.Wishlist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Wishlists");
+                });
+
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.WishlistItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("WishlistId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("WishlistId");
+
+                    b.ToTable("WishlistItems");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1299,6 +1491,16 @@ namespace Travelo.Infrastracture.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Travelo.Domain.Models.Entites.SupportTicket", b =>
+                {
+                    b.HasOne("Travelo.Domain.Models.Entities.ApplicationUser", "User")
+                        .WithMany("SupportTickets")
+                        .HasForeignKey("userId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Travelo.Domain.Models.Entities.BlogPost", b =>
@@ -1388,6 +1590,25 @@ namespace Travelo.Infrastracture.Migrations
                     b.Navigation("Airline");
                 });
 
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.FlightBooking", b =>
+                {
+                    b.HasOne("Travelo.Domain.Models.Entities.Flight", "Flight")
+                        .WithMany()
+                        .HasForeignKey("FlightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Travelo.Domain.Models.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Flight");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Hotel", b =>
                 {
                     b.HasOne("Travelo.Domain.Models.Entities.City", "City")
@@ -1423,6 +1644,17 @@ namespace Travelo.Infrastracture.Migrations
                         .HasForeignKey("MenuCategoryId");
                 });
 
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.Order", b =>
+                {
+                    b.HasOne("Travelo.Domain.Models.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Travelo.Domain.Models.Entities.OrderItem", b =>
                 {
                     b.HasOne("Travelo.Domain.Models.Entities.MenuItem", "MenuItem")
@@ -1444,23 +1676,27 @@ namespace Travelo.Infrastracture.Migrations
 
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Payment", b =>
                 {
+                    b.HasOne("Travelo.Domain.Models.Entities.Flight", "Flight")
+                        .WithMany()
+                        .HasForeignKey("FlightId");
+
                     b.HasOne("Travelo.Domain.Models.Entities.Hotel", "Hotel")
                         .WithMany()
                         .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Travelo.Domain.Models.Entities.Room", "Room")
                         .WithMany()
                         .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Travelo.Domain.Models.Entities.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Flight");
 
                     b.Navigation("Hotel");
 
@@ -1567,6 +1803,36 @@ namespace Travelo.Infrastracture.Migrations
                     b.Navigation("Booking");
                 });
 
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.Wishlist", b =>
+                {
+                    b.HasOne("Travelo.Domain.Models.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.WishlistItem", b =>
+                {
+                    b.HasOne("Travelo.Domain.Models.Entities.Hotel", "Hotel")
+                        .WithMany()
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Travelo.Domain.Models.Entities.Wishlist", "Wishlist")
+                        .WithMany("Items")
+                        .HasForeignKey("WishlistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("Wishlist");
+                });
+
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Airline", b =>
                 {
                     b.Navigation("Reviews");
@@ -1579,6 +1845,8 @@ namespace Travelo.Infrastracture.Migrations
                     b.Navigation("Restaurant");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("SupportTickets");
                 });
 
             modelBuilder.Entity("Travelo.Domain.Models.Entities.BlogPost", b =>
@@ -1625,6 +1893,11 @@ namespace Travelo.Infrastracture.Migrations
             modelBuilder.Entity("Travelo.Domain.Models.Entities.Restaurant", b =>
                 {
                     b.Navigation("MenuCategories");
+                });
+
+            modelBuilder.Entity("Travelo.Domain.Models.Entities.Wishlist", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }
