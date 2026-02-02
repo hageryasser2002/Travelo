@@ -1,4 +1,4 @@
-﻿using Diagnosis.Domain.Models.Entites;
+﻿using Travelo.Domain.Models.Entites;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
