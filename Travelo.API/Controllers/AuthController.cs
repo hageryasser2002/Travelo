@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using System.Security.Claims;
-using Travelo.Application.Common.Responses;
 using Travelo.Application.DTOs.Auth;
 using Travelo.Application.UseCases.Auth;
 
@@ -27,7 +23,7 @@ namespace Travelo.API.Controllers
             return !result.Success ? BadRequest(result) : Ok(result);
         }
         [HttpPost("confirm-email")]
-        public async Task<IActionResult> ConfirmEmail(
+        public async Task<IActionResult> ConfirmEmail (
             [FromBody] ConfirmEmailDTO confirmEmailDTO,
             [FromServices] ConfirmEmailUseCase confirmEmailUseCase
             )
@@ -37,14 +33,14 @@ namespace Travelo.API.Controllers
             return !result.Success ? BadRequest(result) : Ok(result);
         }
         [HttpPost("resend-confirmation-email")]
-        public async Task<IActionResult> ResendConfirmationEmail(
+        public async Task<IActionResult> ResendConfirmationEmail (
             [FromBody] ResendConfirmEmailDTO resendConfirmationEmailDTO,
             [FromServices] ResendConfirmEmailUseCase resendConfirmationEmailUseCase
             )
         {
             var result = await resendConfirmationEmailUseCase.ExecuteAsync(resendConfirmationEmailDTO);
             return !result.Success ? BadRequest(result) : Ok(result);
-        }   
+        }
 
 
         [Authorize]
@@ -89,13 +85,9 @@ namespace Travelo.API.Controllers
         {
 
             var result = await resetPasswordUseCase.ExecuteAsync(resetPasswordDTO);
-            if (!result.Success)
-            {
-                return BadRequest(result);
-            }
-            return Ok(result);
+            return !result.Success ? BadRequest(result) : Ok(result);
         }
-    
+
 
 
 
@@ -122,10 +114,30 @@ namespace Travelo.API.Controllers
 
             return token==null ? BadRequest("Login failed") : Ok(new { token });
         }
+        [HttpGet("Get_User_Profile")]
+        [Authorize]
+        public async Task<IActionResult> GetUserData (
+        [FromServices] GetUserProfileUseCase getUserProfileUseCase)
+        {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+            var result = await getUserProfileUseCase.GetUserData(userId);
+            return result.Success ? Ok(result) : BadRequest(result);
+        }
 
-
-
-
+        [HttpPatch("edit_ProfileData")]
+        [Authorize]
+        public async Task<IActionResult> UpdateProfile (
+         [FromForm] updateUserProfileDTO profileDTO,
+         [FromServices] UpdateUserProfileUseCase updateUserProfileUseCase)
+        {
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+            var result = await updateUserProfileUseCase.ExecuteAsync(profileDTO, userId);
+            return result.Success ? Ok(result) : BadRequest(result);
+        }
     }
 }
 

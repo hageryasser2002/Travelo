@@ -31,13 +31,6 @@ namespace Travelo.Infrastracture.Repositories
             _configuration=configuration;
             _emailSender=emailSender;
         }
-
-        public AuthRepository (ApplicationDbContext context, UserManager<ApplicationUser> userManager)
-        {
-            _context=context;
-            this.userManager=userManager;
-        }
-
         public async Task<GenericResponse<string>> ChangePasswordAsync (ChangePasswordDTO changePasswordDTO, string userId)
         {
             var user = await userManager.FindByIdAsync(userId);
@@ -218,7 +211,7 @@ namespace Travelo.Infrastracture.Repositories
                     return GenericResponse<string>.FailureResponse("Error with creating hotel user");
                 }
 
-                await userManager.AddToRoleAsync(user, "Restaurant");
+                await userManager.AddToRoleAsync(user, "Hotel");
 
                 var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
                 await userManager.ConfirmEmailAsync(user, token);
@@ -471,7 +464,55 @@ namespace Travelo.Infrastracture.Repositories
 
             return GenericResponse<string>.SuccessResponse("Confirmation email resent successfully.");
         }
+        public async Task<GenericResponse<UserProfileDTO>> GetUserData (string userId)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+            if (user==null)
+                return GenericResponse<UserProfileDTO>.FailureResponse("User not found.");
 
+            var roles = await userManager.GetRolesAsync(user);
+
+            var userProfile = new UserProfileDTO
+            {
+                UserId=user.Id,
+                UserName=user.UserName!,
+                Email=user.Email!,
+                PhoneNumber=user.PhoneNumber,
+                Role=roles.FirstOrDefault()??"User",
+                DateOfBirth=user.DateOfBirth,
+                ProfilePictureUrl=user.ProfileImageUrl,
+                Address=user.Address,
+                Gender=user.Gender
+            };
+
+            return GenericResponse<UserProfileDTO>.SuccessResponse(
+                userProfile,
+                "User data retrieved successfully."
+            );
+        }
+
+
+        public async Task<GenericResponse<string>> UpdateUserProfileAsync (updateUserProfileDTORes update, string userId)
+        {
+            var user = await userManager.FindByIdAsync(userId);
+            if (user==null)
+                return GenericResponse<string>.FailureResponse("User not found.");
+
+            user.UserName=update.UserName??user.UserName;
+            user.PhoneNumber=update.PhoneNumber??user.PhoneNumber;
+            user.DateOfBirth=update.DateOfBirth??user.DateOfBirth;
+            user.Address=update.Address??user.Address;
+            user.ProfileImageUrl=update.ProfilePictureUrl??user.ProfileImageUrl;
+            try
+            {
+                await userManager.UpdateAsync(user);
+                return GenericResponse<string>.SuccessResponse("User profile updated successfully.");
+            }
+            catch (Exception ex)
+            {
+                return GenericResponse<string>.FailureResponse($"Update failed: {ex.Message}");
+            }
+        }
 
 
     }

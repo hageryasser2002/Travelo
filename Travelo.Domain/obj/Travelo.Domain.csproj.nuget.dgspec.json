@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj": {}
+    "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj": {}
   },
   "projects": {
-    "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj": {
+    "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj",
+        "projectUniqueName": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj",
         "projectName": "Travelo.Domain",
-        "projectPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj",
+        "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\fullstack\\trvelo\\projct\\Travelo\\Travelo.Domain\\obj\\",
+        "outputPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

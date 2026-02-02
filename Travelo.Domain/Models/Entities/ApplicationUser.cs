@@ -7,11 +7,13 @@ namespace Travelo.Domain.Models.Entities
     {
         public Hotel? Hotel { get; set; }
         public Restaurant? Restaurant { get; set; }
-        // public bool PasswordRestCode { get; set; } = false;
-
-        public IEnumerable<Review>? Reviews { get; set; } = new List<Review>(); 
+        public bool PasswordRestCode { get; set; } = false;
+        public string? ProfileImageUrl { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public string? Address { get; set; }
+        public string? Gender { get; set; }
+        public IEnumerable<Review>? Reviews { get; set; } = new List<Review>();
         public ICollection<SupportTicket>? SupportTickets { get; set; }
-
     }
 
 }

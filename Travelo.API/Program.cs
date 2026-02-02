@@ -15,6 +15,8 @@ using Travelo.Application.Services.FileService;
 using Travelo.Application.Services.Flight;
 using Travelo.Application.Services.Payment;
 using Travelo.Application.Services.Ticket;
+using Travelo.Application.Services.Wishlist;
+using Travelo.Application.Services.WishlistItem;
 using Travelo.Application.UseCases.Auth;
 using Travelo.Application.UseCases.Carts;
 using Travelo.Application.UseCases.Hotels;
@@ -72,6 +74,8 @@ builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IPaymentServices, PaymentServices>();
+builder.Services.AddScoped<IWishlistService, WishlistService>();
+builder.Services.AddScoped<IWishlistItemService, WishlistItemService>();
 
 // Use Cases
 builder.Services.AddScoped<LoginUseCase>();
@@ -83,6 +87,8 @@ builder.Services.AddScoped<ResetPasswordUseCase>();
 builder.Services.AddScoped<ConfirmEmailUseCase>();
 builder.Services.AddScoped<ResendConfirmEmailUseCase>();
 builder.Services.AddScoped<GoogleLoginUseCase>();
+builder.Services.AddScoped<GetUserProfileUseCase>();
+builder.Services.AddScoped<UpdateUserProfileUseCase>();
 
 // Restaurant & Menu Use Cases
 builder.Services.AddScoped<AddRestaurantUseCase>();

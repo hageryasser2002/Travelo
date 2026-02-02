@@ -14,7 +14,6 @@ namespace Travelo.Application.Services.City
         Task<GenericResponse<string>> UpdateCity (int cityId, CityReqDTO cityReq);
         Task<GenericResponse<string>> RemoveCity (int cityId);
         Task<GenericResponse<IEnumerable<RestaurantDto>>> GetCityRestorants (int cityId);
-        Task<GenericResponse<IEnumerable<RestaurantDto>>> GetCityTopRestorants (int cityId);
-        Task<GenericResponse<IEnumerable<HotelDetailsDto>>> GetCityHotels (int cityId);
+        Task<GenericResponse<IEnumerable<HotelCardDto>>> GetCityHotels (int cityId);
     }
 }
