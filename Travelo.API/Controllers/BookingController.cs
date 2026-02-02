@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Travelo.Application.DTOs.Booking;
 using Travelo.Application.Services.Booking;
 
@@ -14,6 +16,29 @@ namespace Travelo.API.Controllers
         {
             _bookingService = bookingService;
         }
+
+        [Authorize]
+        [HttpGet("my-trips")]
+        public async Task<IActionResult> GetMyTrips()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var result = await _bookingService.GetMyTripsAsync(userId);
+
+            return Ok(result);
+        }
+
+        [HttpGet("trips/{id}")]
+        public async Task<IActionResult> GetTripDetails(int id)
+        {
+            var result = await _bookingService.GetDetailsAsync(id);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
 
         [HttpPost("flight")]
         public async Task<IActionResult> CreateFlightBooking([FromBody] CreateBookingDto dto)

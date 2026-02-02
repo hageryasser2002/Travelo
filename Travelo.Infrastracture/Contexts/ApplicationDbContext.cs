@@ -13,6 +13,7 @@ namespace Travelo.Infrastracture.Contexts
         public DbSet<Airline> Airlines { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<GeneralBooking> GeneralBookings { get; set; }
         public DbSet<BookingPrice> BookingPrices { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }

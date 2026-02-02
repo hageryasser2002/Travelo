@@ -10,6 +10,8 @@ namespace Travelo.Application.Services.Booking
 {
     public interface IBookingService
     {
+        Task<BookingDetailsDto?> GetDetailsAsync(int id);
+        Task<List<TripDto>> GetMyTripsAsync(string userId);
         Task<BookingDto> CreateFlightBookingAsync(CreateBookingDto dto);
         Task<BookingDto> ConfirmBookingAsync(int bookingId);
         Task CancelBookingAsync(int bookingId);

@@ -21,6 +21,13 @@ namespace Travelo.Infrastracture.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task AddGeneralAsync(GeneralBooking booking)
+        {
+            booking.CreatedOn = DateTime.UtcNow;
+            _context.GeneralBookings.Add(booking);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<Booking?> GetByIdAsync(int id)
         {
             return await _context.Bookings
@@ -28,9 +35,31 @@ namespace Travelo.Infrastracture.Repositories
                 .FirstOrDefaultAsync(b => b.Id == id && !b.IsDeleted);
         }
 
+        public async Task<List<GeneralBooking>> GetByUserIdAsync(string userId)
+        {
+            return await _context.GeneralBookings
+                       .Include(b => b.Flight)
+                       .Include(b => b.Hotel)
+                       .Include(b => b.Room)
+                       .Where(b => b.UserId == userId)
+                       .ToListAsync();
+        }
+
+        public async Task<GeneralBooking?> GetGeneralByIdAsync(int id)
+        {
+            return await _context.GeneralBookings
+                .Include(b => b.Flight)
+                .Include(b => b.Hotel)
+                .Include(b => b.Room)
+                .Include(b => b.PriceDetails)
+                .FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }
+
     }
 }
