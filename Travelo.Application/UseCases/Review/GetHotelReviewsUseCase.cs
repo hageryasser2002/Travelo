@@ -27,7 +27,10 @@ namespace Travelo.Application.UseCases.Review
 
             if (allReviews == null || !allReviews.Any())
             {
-                return new GenericResponse<HotelReviewDto> { Data = new HotelReviewDto() };
+                return GenericResponse<HotelReviewDto>.SuccessResponse(
+                     new HotelReviewDto(),
+                     "No reviews found for this hotel yet."
+                     );
             }
 
             var pagedReviewsResponse = await _unitOfWork.Reviews.GetHotelReviews(hotelId, pageNum, pageSize);
@@ -72,7 +75,8 @@ namespace Travelo.Application.UseCases.Review
                 }).ToList()
             };
 
-            return new GenericResponse<HotelReviewDto> { Data = hotelReviewDto };
+            return GenericResponse<HotelReviewDto>.SuccessResponse(hotelReviewDto, "Reviews retrieved successfully");
+
         }
         private decimal CalculateAverage<T>(List<T> reviews, Func<T, decimal?> selector)
         {
