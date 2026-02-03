@@ -156,14 +156,5 @@ namespace Travelo.Application.Services.City
             return GenericResponse<IEnumerable<HotelCardDto>>.SuccessResponse(hotelDtos);
         }
 
-        public Task<GenericResponse<IEnumerable<RestaurantDto>>> GetCityTopRestorants(int cityId)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<GenericResponse<IEnumerable<HotelDetailsDto>>> ICityService.GetCityHotels(int cityId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
