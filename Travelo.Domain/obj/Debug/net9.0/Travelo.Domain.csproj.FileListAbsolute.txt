@@ -24,3 +24,16 @@ C:\fullstack\trvelo\projct\porj\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.
 C:\fullstack\trvelo\projct\porj\Travelo\Travelo.Domain\obj\Debug\net9.0\refint\Travelo.Domain.dll
 C:\fullstack\trvelo\projct\porj\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.pdb
 C:\fullstack\trvelo\projct\porj\Travelo\Travelo.Domain\obj\Debug\net9.0\ref\Travelo.Domain.dll
+E:\Travelo\Travelo.Domain\bin\Debug\net9.0\Travelo.Domain.deps.json
+E:\Travelo\Travelo.Domain\bin\Debug\net9.0\Travelo.Domain.dll
+E:\Travelo\Travelo.Domain\bin\Debug\net9.0\Travelo.Domain.pdb
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.csproj.AssemblyReference.cache
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.AssemblyInfoInputs.cache
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.AssemblyInfo.cs
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.csproj.CoreCompileInputs.cache
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.sourcelink.json
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.dll
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\refint\Travelo.Domain.dll
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\Travelo.Domain.pdb
+E:\Travelo\Travelo.Domain\obj\Debug\net9.0\ref\Travelo.Domain.dll

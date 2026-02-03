@@ -5124,42 +5124,46 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\aa\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj",
+      "projectUniqueName": "E:\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj",
       "projectName": "Travelo.Infrastracture",
-      "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Infrastracture\\obj\\",
+      "projectPath": "E:\\Travelo\\Travelo.Infrastracture\\Travelo.Infrastracture.csproj",
+      "packagesPath": "C:\\Users\\aa\\.nuget\\packages\\",
+      "outputPath": "E:\\Travelo\\Travelo.Infrastracture\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Travelo.Application.csproj": {
-              "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Application\\Travelo.Application.csproj"
+            "E:\\Travelo\\Travelo.Application\\Travelo.Application.csproj": {
+              "projectPath": "E:\\Travelo\\Travelo.Application\\Travelo.Application.csproj"
             },
-            "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj": {
-              "projectPath": "C:\\fullstack\\trvelo\\projct\\porj\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj"
+            "E:\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj": {
+              "projectPath": "E:\\Travelo\\Travelo.Domain\\Travelo.Domain.csproj"
             }
           }
         }
@@ -5211,7 +5215,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
