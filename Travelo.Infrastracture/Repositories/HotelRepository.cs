@@ -89,15 +89,22 @@ namespace Travelo.Infrastracture.Repositories
                     AvgValueRate=hotelEntity.Reviews.Any() ? hotelEntity.Reviews.Average(r => r.ValueRating)??0 : 0,
                     AvgCommunicationRate=hotelEntity.Reviews.Any() ? hotelEntity.Reviews.Average(r => r.CommunicationRating)??0 : 0,
                     AvgAmenityRate=hotelEntity.Reviews.Any() ? hotelEntity.Reviews.Average(r => r.AmenityRating)??0 : 0,
-                    Reviews=hotelEntity.Reviews.Select(r => new ReviewDto
+
+                    Reviews = hotelEntity.Reviews.OrderByDescending(r => r.CreatedOn).Take(3).Select(r => new ReviewDto
                     {
-                        Id=r.Id,
+                        Id =r.Id,
                         UserId=r.UserId,
-                        UserName=r.User!=null ? r.User.UserName : "Anonymous",
+                        UserName=r.User!=null ? r.User.UserName : "Guest",
                         HotelId=r.HotelId,
                         HotelName=hotelEntity.Name,
                         OverallRate=r.OverallRating,
-                        Comment=r.Comment,
+                        CleanlinessRate = r.CleanlinessRating,
+                        LocationRate = r.LocationRating,
+                        ValueRate = r.ValueRating,
+                        AmenityRate = r.AmenityRating,
+                        CommunicationRate = r.CommunicationRating,
+
+                        Comment =r.Comment,
                         CreatedAt=r.CreatedOn??DateTime.UtcNow,
                     }).ToList()
                 };
@@ -193,7 +200,7 @@ namespace Travelo.Infrastracture.Repositories
             }
         }
 
-        //reviews
+        
 
 
         public async Task<GenericResponse<IEnumerable<ThingToDoDto>>> GetThingsToDoByHotelIdAsync(int hotelId)

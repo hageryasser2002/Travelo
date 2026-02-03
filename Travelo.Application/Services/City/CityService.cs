@@ -155,5 +155,6 @@ namespace Travelo.Application.Services.City
 
             return GenericResponse<IEnumerable<HotelCardDto>>.SuccessResponse(hotelDtos);
         }
+
     }
 }
