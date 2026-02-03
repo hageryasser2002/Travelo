@@ -59,7 +59,7 @@ namespace Travelo.API.Controllers
             }
         }
 
-        [HttpPut("id")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateReview ([FromRoute] int id, [FromBody] UpdateReviewDto dto)
         {
             try
@@ -74,14 +74,14 @@ namespace Travelo.API.Controllers
             }
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveReview ([FromRoute] int id)
         {
             try
             {
-                var userId = GetCurrentUserId();
-                await _removeReviewUseCase.RemoveReview(id, userId);
-                return NoContent();
+                var userId = GetCurrentUserId();                      
+                var res = await _removeReviewUseCase.RemoveReview(id, userId);
+                return Ok(res);
             }
             catch (Exception ex)
             {
@@ -90,7 +90,7 @@ namespace Travelo.API.Controllers
         }
 
         //Get: /api/review/id
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetReviewById ([FromRoute] int id)
         {
